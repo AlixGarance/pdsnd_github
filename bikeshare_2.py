@@ -169,24 +169,27 @@ def user_count(df):
 
 def user_stats(df):
     """Displays statistics on bikeshare users."""
+    if city == 'washington':
+        print('\nThere is no data about gender and birth year for Washington.\n')
+        print('-'*40)
+    else:
+        print('\nCalculating User Stats...\n')
+        start_time = time.time()
 
-    print('\nCalculating User Stats...\n')
-    start_time = time.time()
+        # Display counts of gender
+        count_gender = df['Gender'].value_counts()
+        print('The count of gender is:\n', count_gender)
 
-    # Display counts of gender
-    count_gender = df['Gender'].value_counts()
-    print('The count of gender is:\n', count_gender)
+        # Display earliest, most recent, and most common year of birth
+        earliest_birth_year = df['Birth Year'].min()
+        print('\nThe earliest birth year is: ', int(earliest_birth_year))
+        latest_birth_year = df['Birth Year'].max()
+        print('The latest birth year is: ', int(latest_birth_year))
+        common_birth_year = df['Birth Year'].mode()[0]
+        print('The most common birth year is: ', int(common_birth_year))
 
-    # Display earliest, most recent, and most common year of birth
-    earliest_birth_year = df['Birth Year'].min()
-    print('\nThe earliest birth year is: ', int(earliest_birth_year))
-    latest_birth_year = df['Birth Year'].max()
-    print('The latest birth year is: ', int(latest_birth_year))
-    common_birth_year = df['Birth Year'].mode()[0]
-    print('The most common birth year is: ', int(common_birth_year))
-
-    print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+        print("\nThis took %s seconds." % (time.time() - start_time))
+        print('-'*40)
 
 def see_data(df):
     """Displays 5 more rows."""
@@ -213,11 +216,6 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_count(df)
-        if city == 'washington':
-            print('\nThere is no data about gender and birth year for Washington.\n')
-            print('-'*40)
-        else:
-            user_stats(df)
         see_data(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
