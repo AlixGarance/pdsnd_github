@@ -1,15 +1,21 @@
 ### Date created
-Include the date you created this project and README file.
+12/01/2021
 
 ### Project Title
-Replace the Project Title
+Bike Share
 
 ### Description
-Describe what your project is about and what it does
+This project is a tool to get statistical data about bike share use in Chicago, New York City or Washington.
 
 ### Files used
-Include the files used
+*Data bases:*
+chicago.csv
+new_york_city.csv
+washington.csv
+
+*Python file:*
+bikeshare_2.py
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+https://www.motivateco.com/ data wrangled by Udacity.
+Udacity template for the bikeshare project.
