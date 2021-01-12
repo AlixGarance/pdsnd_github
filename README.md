@@ -6,6 +6,7 @@ Bike Share
 
 ### Description
 This project is a tool to get statistical data about bike share use in Chicago, New York City or Washington.
+Data include the first 6 months of 2017.
 
 ### Files used
 *Data bases:*
